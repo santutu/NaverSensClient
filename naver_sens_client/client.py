@@ -6,7 +6,7 @@ class Obj:
     pass
 
 
-class SMSSsendBody(Obj):
+class SMSSendBody(Obj):
     type: str  # defualt 'sms' 일반 | 'lms' 긴 메세지
     contentType: str  # 'AD' 광고용 | default 'COMM' 일반
     countryCode: str  # default korean 82
@@ -23,7 +23,7 @@ class SMSSsendBody(Obj):
 
     @property
     def __dict__(self):
-        dict = super(SMSSsendBody, self).__dict__
+        dict = super(SMSSendBody, self).__dict__
         if 'fromNumber' in dict:
             dict.update({'from': self.fromNumber})
             del dict['fromNumber']
@@ -39,7 +39,7 @@ class SensClient:
         self._secret_key = secret_key
         self._access_key_id = access_key_id
 
-    def send_sms_by_body(self, body: Union[SMSSsendBody, Dict]):
+    def send_sms_by_body(self, body: Union[SMSSendBody, Dict]):
         if not isinstance(body, Dict):
             body = body.__dict__
 
@@ -53,7 +53,7 @@ class SensClient:
         if not from_number:
             from_number = self._from_number
 
-        body = SMSSsendBody(from_number)
+        body = SMSSendBody(from_number)
         body.to = mobile_numbers
         body.content = content
 
