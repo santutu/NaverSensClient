@@ -1,34 +1,34 @@
-#NAVER SENS CLIENT
+# NAVER SENS CLIENT
 
 
 * support only send sms yet
 
-##Install
+## Install
 <pre>
 pip install naver-sens-client
 </pre>
 
-##Usage
-<pre><code>
+## Usage
+<pre>
 sens_client = SensClient(service_id, secret_key, access_key_id)
-</code></pre>
+</pre>
 and then
-<pre><code>
+<pre>
 response = sens_client.send_sms(to_mobile_number, content, from_mobile_number)
-</code></pre>
+</pre>
 
 or
 
-<pre><code>
+<pre>
 sens_client.set_from_number(from_mobile_number)
 response = sens_client.send_sms(to_mobile_number, content)
-</code></pre>
+</pre>
 
 then confirm response.
-<pre><code>
+<pre>
 print(response.status_code)
 print(response.content.decode('utf-8'))
-</code></pre>
+</pre>
 
-##More detail
+## More detail
 [Naver Sens API DOCUMENT/KR-KO](https://sens.ncloud.com/assets/html/docs/index.html?url=https://api-sens.ncloud.com/docs/openapi/ko)
