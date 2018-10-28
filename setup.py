@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="naver_sens_client",
-    version="0.0.2",
+    version="0.0.3",
     author="santutu",
     author_email="santutu@naver.com",
     description="NAVER SENS CLIENT",

@@ -10,6 +10,8 @@ pip install naver-sens-client
 
 ## Usage
 <pre>
+from naver_sens_client.client import SensClient
+
 sens_client = SensClient(service_id, secret_key, access_key_id)
 </pre>
 and then
