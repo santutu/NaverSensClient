@@ -1,0 +1,4 @@
+.idea/
+build/
+dist/
+naver_sens_client.egg-info/
